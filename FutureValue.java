@@ -6,13 +6,15 @@ public class FutureValue{
     double P = hi.nextDouble();
     System.out.println("What is your monthly interest rate in % form?");
     double i = hi.nextDouble()/100;
-    System.out.println("How long will it stay in the account for");
-
-    System.out.printf("The kinetic energy is %.2f", KE);
+    System.out.println("For how many months will it stay in the account");
+    double t = (double) hi.nextInt();
+    double F = futureValue(P,i,t);
+    System.out.printf("The account's future value will be $%.2f%n", F);
 }
-public static double kineticEnergy(double mass, double velocity){
-    double KE = 0.5 * mass * (velocity*velocity);
-    return KE;
+public static double futureValue(double P, double i, double t){
+    // F = P × (1 + i)ᵗ
+    double F = P *(Math.pow((1+i),t));
+    return F;
 }}
 
 
